@@ -43,7 +43,7 @@ const siteData = {
     ],
     "contact": {
         "email": "mrzaman360@gmail.com",
-        "github": "https://github.com/your-username",
+        "github": "https://github.com/MrZaman03",
         "linkedin": "https://linkedin.com/in/your-profile",
         "resume_url": "link-to-your-resume.pdf"
     }
