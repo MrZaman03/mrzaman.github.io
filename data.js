@@ -1,6 +1,7 @@
 const siteData = {
     "profile": {
         "name": "MD RASHEDUZZAMAN",
+        "image": "D:\My Project\My Portfolio\Weixin Image_20260502221445_127_2.jpg",
         "major": "Artificial Intelligence",
         "year": "Undergraduate",
         "university": "Shanghai University of Engineering Science",
