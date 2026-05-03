@@ -7,52 +7,52 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
         /* Update the Home layout to be a grid/flex for the photo */
-.home-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 50px;
-    flex-wrap: wrap; /* Keeps it mobile friendly */
-}
+        .home-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+            flex-wrap: wrap; /* Keeps it mobile friendly */
+        }
 
-.hero {
-    flex: 1;
-    min-width: 300px;
-}
+        .hero {
+            flex: 1;
+            min-width: 300px;
+        }
 
-.hero-image {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    min-width: 300px;
-}
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            min-width: 300px;
+        }
 
-#home-photo {
-    width: 350px;
-    height: 350px;
-    border-radius: 50%; /* Makes it a circle */
-    object-fit: cover;
-    border: 4px solid var(--accent-color);
-    box-shadow: 0 0 30px rgba(0, 209, 255, 0.3); /* Neon glow effect */
-    transition: var(--transition);
-}
+        #home-photo {
+            width: 350px;
+            height: 350px;
+            border-radius: 50%; /* Makes it a circle */
+            object-fit: cover;
+            border: 4px solid var(--accent-color);
+            box-shadow: 0 0 30px rgba(0, 209, 255, 0.3); /* Neon glow effect */
+            transition: var(--transition);
+        }
 
-#home-photo:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 50px rgba(0, 209, 255, 0.6);
-}
-
-/* On mobile, put the photo on top */
-@media (max-width: 768px) {
-    .home-container {
-        flex-direction: column-reverse;
-        text-align: center;
-    }
-    #home-photo {
-        width: 250px;
-        height: 250px;
-    }
-}
+        #home-photo:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 50px rgba(0, 209, 255, 0.6);
+        }
+        
+        /* On mobile, put the photo on top */
+        @media (max-width: 768px) {
+            .home-container {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+            #home-photo {
+                width: 250px;
+                height: 250px;
+            }
+        }
         :root {
             --bg-color: #050505; 
             --text-color: #fafafa; 
