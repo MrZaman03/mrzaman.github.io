@@ -163,6 +163,7 @@
             document.getElementById('hero-bio').innerText = profile.bio_short;
             document.getElementById('contact-email').innerText = contact.email;
             document.getElementById('resume-link').href = contact.resume_url;
+            document.getElementById('home-photo').src = profile.photo;
 
             const tBox = document.getElementById('home-skill-tags');
             skills.home_tags.forEach(t => tBox.innerHTML += `<span class="tag">${t}</span>`);
