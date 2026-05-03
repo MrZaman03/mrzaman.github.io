@@ -1,50 +1,49 @@
 const siteData = {
     "profile": {
         "name": "MD RASHEDUZZAMAN",
-        "image": "D:\My Project\My Portfolio\Weixin Image_20260502221445_127_2.jpg",
         "major": "Artificial Intelligence",
         "year": "Undergraduate",
         "university": "Shanghai University of Engineering Science",
         "graduation_date": "June 2027",
-        "tagline": "AI Undergraduate | Building intelligent systems",
-        "bio_short": "Passionate about LLMs, computer vision, and Machine Learning.",
+        "tagline": "Architecting the Future of Machine Intelligence",
+        "bio_short": "Specializing in Large Language Models (LLMs) and Computer Vision to bridge the gap between digital data and physical world understanding.",
         "bio_long": [
-            "I am currently a Junior at Shanghai University of Engineering Science focusing on the practical applications of Artificial Intelligence.",
-            "My research interest lies in how Large Language Models can be optimized for specific domain tasks using RAG and efficient fine-tuning techniques.",
-            "Outside of my studies, I am an active contributor to open-source projects and enjoy analyzing the ethics of AI."
+            "Currently pursuing a degree in Artificial Intelligence at the Shanghai University of Engineering Science, I focus on building high-performance, lightweight machine learning models.",
+            "My academic research explores the intersection of 3D Point Cloud Analysis and Clinical Behavioral Diagnostics, utilizing technical modeling to quantify human interaction metrics.",
+            "I am committed to efficiency optimization, ensuring that advanced AI solutions can run effectively on constrained hardware without sacrificing accuracy."
         ]
     },
     "skills": {
-        "home_tags": ["Python", "PyTorch", "Transformers", "Machine Learning"],
-        "languages": ["Python", "SQL", "JavaScript", "C++"],
-        "frameworks": ["PyTorch", "TensorFlow", "Scikit-learn", "Hugging Face"],
-        "tools": ["Git", "Docker", "VS Code", "Jupyter Notebooks", "Linux"],
-        "coursework": ["Deep Learning", "NLP", "Computer Vision", "Machine Learning", "Data Structures"]
+        "home_tags": ["LLMs", "SLAM", "PyTorch", "Computer Vision", "RAG Systems"],
+        "languages": ["Python (Expert)", "C++", "SQL", "JavaScript"],
+        "frameworks": ["PyTorch", "TensorFlow", "Hugging Face Transformers", "OpenCV", "LangChain"],
+        "tools": ["Git/GitHub", "Linux (Ubuntu)", "VS Code", "Jupyter"],
+        "coursework": ["Deep Learning", "Data Stracture", "Machine Learning", "Computer Vision", "Point Cloud Analysis", "SLAM", "Natural Language Processing", "Linear Algebra"]
     },
     "projects": [
         {
-            "title": "LLM Fine-tuning for Code Gen",
-            "description": "Experimented with Llama 3 fine-tuning using LoRA to improve Python documentation generation.",
-            "tech_stack": ["Python", "PyTorch", "Hugging Face"],
+            "title": "LLM Optimization for Specialized Tasks",
+            "description": "Utilizing Parameter-Efficient Fine-Tuning (PEFT) and LoRA to adapt Llama 3 for niche programming languages with minimal compute overhead.",
+            "tech_stack": ["Python", "Hugging Face", "LoRA"],
             "github_link": "#"
         },
         {
-            "title": "CNN Image Classifier",
-            "description": "A high-accuracy image classification model built to detect specific medical anomalies in X-ray data.",
-            "tech_stack": ["TensorFlow", "OpenCV"],
+            "title": "Clinical Spatial Mapping",
+            "description": "A Point Cloud-based system designed to map 'Social Distance' metrics for automated behavioral test diagnostics in healthcare environments.",
+            "tech_stack": ["SLAM", "OpenCV", "Point Cloud"],
             "github_link": "#"
         },
         {
-            "title": "RAG Document Q&A",
-            "description": "Developed a pipeline using LangChain to allow natural language queries over private PDF databases.",
-            "tech_stack": ["LangChain", "OpenAI", "Pinecone"],
+            "title": "Document Intelligence Pipeline",
+            "description": "A full-stack RAG (Retrieval-Augmented Generation) system optimized for parsing and querying complex academic research papers.",
+            "tech_stack": ["LangChain", "Pinecone", "Python"],
             "github_link": "#"
         }
     ],
     "contact": {
-        "email": "mrzaman360@gmail.com",
+        "email": "027123134@sues.edu.cn",
         "github": "https://github.com/MrZaman03",
-        "linkedin": "https://linkedin.com/in/your-profile",
-        "resume_url": "link-to-your-resume.pdf"
+        "linkedin": "https://linkedin.com/in/rasheduzzaman",
+        "resume_url": "resume.pdf"
     }
 };
