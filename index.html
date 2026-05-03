@@ -3,143 +3,137 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MD RASHEDUZZAMAN | Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>MD RASHEDUZZAMAN | AI Engineer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #ffffff; --text-color: #1f2937; --accent-color: #3b82f6;
-            --secondary-bg: #f3f4f6; --card-bg: #ffffff; --border-color: #e5e7eb;
-            --hero-gradient: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
-            --transition: all 0.3s ease;
+            --bg-color: #050505; 
+            --text-color: #fafafa; 
+            --accent-color: #00d1ff;
+            --secondary-bg: #111111; 
+            --card-bg: rgba(255, 255, 255, 0.03); 
+            --border-color: rgba(255, 255, 255, 0.1);
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        [data-theme="dark"] {
-            --bg-color: #0f172a; --text-color: #f1f5f9; --accent-color: #60a5fa;
-            --secondary-bg: #1e293b; --card-bg: #1e293b; --border-color: #334155;
-            --hero-gradient: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
-        }
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
-        body { background-color: var(--bg-color); color: var(--text-color); line-height: 1.6; transition: var(--transition); }
-        
-        /* Navigation */
-        nav { position: fixed; top: 0; width: 100%; padding: 1.5rem 10%; display: flex; justify-content: space-between; align-items: center; background: var(--bg-color); border-bottom: 1px solid var(--border-color); z-index: 1000; }
-        .nav-links { display: flex; list-style: none; gap: 2rem; }
-        .nav-links a { text-decoration: none; color: var(--text-color); font-weight: 500; cursor: pointer; }
-        .nav-links a.active { color: var(--accent-color); border-bottom: 2px solid var(--accent-color); }
-        .theme-toggle { cursor: pointer; background: none; border: 1px solid var(--border-color); padding: 5px 12px; border-radius: 20px; color: var(--text-color); }
 
-        /* Sections */
-        section { padding: 120px 10% 60px; min-height: 100vh; display: none; animation: fadeIn 0.6s ease-in-out; }
+        [data-theme="light"] {
+            --bg-color: #f8fafc; --text-color: #0f172a; --accent-color: #2563eb;
+            --secondary-bg: #f1f5f9; --card-bg: #ffffff; --border-color: #e2e8f0;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
+        body { background-color: var(--bg-color); color: var(--text-color); line-height: 1.7; transition: var(--transition); }
+
+        nav { position: fixed; top: 0; width: 100%; padding: 1.5rem 10%; display: flex; justify-content: space-between; align-items: center; background: rgba(5, 5, 5, 0.8); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border-color); z-index: 1000; }
+        .nav-links { display: flex; list-style: none; gap: 2.5rem; }
+        .nav-links a { text-decoration: none; color: var(--text-color); font-weight: 600; cursor: pointer; opacity: 0.7; transition: var(--transition); }
+        .nav-links a.active, .nav-links a:hover { opacity: 1; color: var(--accent-color); }
+
+        section { padding: 140px 10% 80px; min-height: 100vh; display: none; animation: slideUp 0.7s ease; }
         section.active { display: block; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
 
-        /* Home Page Styles */
-        #home { text-align: center; background: var(--hero-gradient); display: flex; flex-direction: column; justify-content: center; align-items: center; }
-        .hero h1 { font-size: 3.5rem; margin-bottom: 0.5rem; }
-        .tagline { font-size: 1.4rem; color: var(--accent-color); font-weight: 600; margin-bottom: 1.5rem; }
-        .skill-tags { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin: 20px 0; }
-        .tag { background: var(--accent-color); color: white; padding: 4px 12px; border-radius: 15px; font-size: 0.85rem; }
+        .hero { text-align: left; max-width: 900px; }
+        .hero h1 { font-size: clamp(3rem, 8vw, 5rem); font-weight: 800; line-height: 1.1; margin-bottom: 1.5rem; background: linear-gradient(to right, #fff, var(--accent-color)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .tagline { font-size: 1.5rem; font-weight: 400; color: #888; margin-bottom: 2rem; }
 
-        /* Grid Styles */
-        .project-grid, .tech-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-top: 30px; }
-        .project-card, .tech-card { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; padding: 20px; transition: var(--transition); }
-        .project-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
-        .btn { background: var(--accent-color); color: white; padding: 10px 25px; border-radius: 6px; text-decoration: none; display: inline-block; margin-top: 15px; border: none; cursor: pointer; }
-        
-        .floating-contact { position: fixed; bottom: 25px; right: 25px; background: var(--accent-color); color: white; width: 55px; height: 55px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 1.5rem; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
+        .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-top: 40px; }
+        .project-card { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 20px; padding: 30px; transition: var(--transition); position: relative; overflow: hidden; }
+        .project-card:hover { transform: translateY(-10px); border-color: var(--accent-color); background: rgba(0, 209, 255, 0.05); }
+
+        .tag { background: rgba(255,255,255,0.05); color: var(--accent-color); padding: 5px 14px; border-radius: 100px; font-size: 0.8rem; font-weight: 600; border: 1px solid var(--border-color); }
+        .btn { background: var(--accent-color); color: #000; padding: 14px 32px; border-radius: 12px; text-decoration: none; font-weight: 700; display: inline-block; transition: var(--transition); border: none; }
+        .btn:hover { transform: scale(1.05); box-shadow: 0 0 20px rgba(0, 209, 255, 0.4); }
+
+        .floating-contact { position: fixed; bottom: 30px; right: 30px; background: var(--accent-color); color: #000; width: 60px; height: 60px; border-radius: 20px; display: flex; justify-content: center; align-items: center; font-size: 1.5rem; cursor: pointer; box-shadow: 0 10px 20px rgba(0,0,0,0.4); z-index: 1000; }
     </style>
 </head>
-<body data-theme="dark">
+<body>
     <nav>
-        <div class="logo" id="logo-name">M R ZAMAN</div>
+        <div class="logo" style="font-weight: 800; letter-spacing: -1px;">M R Zaman</div>
         <ul class="nav-links">
             <li><a id="nav-home" class="active" onclick="showPage('home')">Home</a></li>
             <li><a id="nav-about" onclick="showPage('about')">About</a></li>
             <li><a id="nav-projects" onclick="showPage('projects')">Projects</a></li>
             <li><a id="nav-contact" onclick="showPage('contact')">Contact</a></li>
         </ul>
-        <button class="theme-toggle" onclick="toggleTheme()">🌓 Mode</button>
     </nav>
 
     <section id="home" class="active">
-        <h1 id="hero-name"></h1>
-        <p class="tagline" id="hero-tagline"></p>
-        <p id="hero-bio" style="max-width: 600px; margin: 0 auto;"></p>
-        <div class="skill-tags" id="home-skill-tags"></div>
-        <div id="home-socials"></div>
-        <button onclick="showPage('projects')" class="btn">Explore Projects</button>
+        <div class="hero">
+            <h1 id="hero-name"></h1>
+            <p class="tagline" id="hero-tagline"></p>
+            <p id="hero-bio" style="font-size: 1.2rem; color: #aaa; margin-bottom: 2.5rem;"></p>
+            <div class="skill-tags" id="home-skill-tags" style="display: flex; gap: 10px; margin-bottom: 3rem;"></div>
+            <button onclick="showPage('projects')" class="btn">View Systems</button>
+        </div>
     </section>
 
     <section id="about">
-        <h2 style="text-align: center; margin-bottom: 2rem;">About Me</h2>
-        <div id="about-text"></div>
-        <h3 style="margin-top: 40px;">Core Skills</h3>
-        <div class="tech-grid" id="tech-skills-grid"></div>
+        <h2 style="font-size: 3rem; margin-bottom: 2rem;">Philosophy & Expertise</h2>
+        <div id="about-text" style="max-width: 800px; font-size: 1.1rem; color: #ccc;"></div>
+        <div class="project-grid" id="tech-skills-grid" style="margin-top: 50px;"></div>
     </section>
 
     <section id="projects">
-        <h2 style="text-align: center;">Featured Projects</h2>
+        <h2 style="font-size: 3rem;">Selected Research</h2>
         <div class="project-grid" id="project-container"></div>
     </section>
 
     <section id="contact">
-        <h2 style="text-align: center;">Connect With Me</h2>
-        <div style="max-width: 500px; margin: 0 auto; text-align: center;">
-            <p>I'm always open to discussing AI research, internship opportunities, or interesting projects.</p>
-            <p style="margin: 20px 0;">Email: <strong id="contact-email"></strong></p>
-            <a id="resume-link" href="#" class="btn">Download Resume</a>
+        <h2 style="font-size: 3rem; margin-bottom: 1rem;">Let's Build</h2>
+        <p style="color: #888; margin-bottom: 2rem;">Available for AI Research collaborations and internships.</p>
+        <div style="background: var(--card-bg); padding: 40px; border-radius: 24px; border: 1px solid var(--border-color);">
+            <p style="font-size: 1.5rem; font-weight: 600;" id="contact-email"></p>
+            <div style="margin-top: 30px;">
+                <a id="resume-link" href="#" class="btn">Download Curriculum Vitae</a>
+            </div>
         </div>
     </section>
 
-    <div class="floating-contact" onclick="showPage('contact')">📧</div>
+    <div class="floating-contact" onclick="showPage('contact')">⚡</div>
 
     <script src="data.js"></script>
     <script>
-        function showPage(pageId) {
+        function showPage(pId) {
             document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
             document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
-            document.getElementById(pageId).classList.add('active');
-            document.getElementById('nav-' + pageId).classList.add('active');
+            document.getElementById(pId).classList.add('active');
+            document.getElementById('nav-' + pId).classList.add('active');
             window.scrollTo(0,0);
-        }
-
-        function toggleTheme() {
-            const body = document.body;
-            body.setAttribute('data-theme', body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
         }
 
         function render() {
             if (typeof siteData === 'undefined') return;
             const { profile, skills, projects, contact } = siteData;
-
             document.getElementById('hero-name').innerText = profile.name;
             document.getElementById('hero-tagline').innerText = profile.tagline;
             document.getElementById('hero-bio').innerText = profile.bio_short;
             document.getElementById('contact-email').innerText = contact.email;
+            document.getElementById('resume-link').href = contact.resume_url;
 
-            // Render Tags
-            const tagBox = document.getElementById('home-skill-tags');
-            skills.home_tags.forEach(t => tagBox.innerHTML += `<span class="tag">${t}</span>`);
+            const tBox = document.getElementById('home-skill-tags');
+            skills.home_tags.forEach(t => tBox.innerHTML += `<span class="tag">${t}</span>`);
 
-            // Render About
-            const aboutBox = document.getElementById('about-text');
-            profile.bio_long.forEach(p => aboutBox.innerHTML += `<p style="margin-bottom:15px">${p}</p>`);
+            const aBox = document.getElementById('about-text');
+            profile.bio_long.forEach(p => aBox.innerHTML += `<p style="margin-bottom:20px">${p}</p>`);
 
-            // Render Projects
-            const pContainer = document.getElementById('project-container');
+            const pCont = document.getElementById('project-container');
             projects.forEach(p => {
-                pContainer.innerHTML += `
+                pCont.innerHTML += `
                     <div class="project-card">
-                        <h3>${p.title}</h3>
-                        <p style="font-size:0.9rem; margin:10px 0;">${p.description}</p>
-                        <div class="skill-tags" style="justify-content:start">${p.tech_stack.map(ts => `<span class="tag">${ts}</span>`).join('')}</div>
-                        <a href="${p.github_link}" target="_blank" style="font-size:0.8rem; color:var(--accent-color);">View Code →</a>
+                        <h3 style="margin-bottom:10px">${p.title}</h3>
+                        <p style="color:#888; font-size:0.95rem; margin-bottom:20px">${p.description}</p>
+                        <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:20px">
+                            ${p.tech_stack.map(ts => `<span class="tag" style="font-size:0.7rem">${ts}</span>`).join('')}
+                        </div>
+                        <a href="${p.github_link}" target="_blank" style="text-decoration:none; color:var(--accent-color); font-weight:700;">SOURCE_CODE.sh →</a>
                     </div>`;
             });
 
-            // Render Skills
             const sGrid = document.getElementById('tech-skills-grid');
-            [ {n:'Languages', d:skills.languages}, {n:'ML Frameworks', d:skills.frameworks}, {n:'Tools', d:skills.tools} ].forEach(c => {
-                sGrid.innerHTML += `<div class="tech-card"><h4>${c.n}</h4><p>${c.d.join(', ')}</p></div>`;
+            [ {n:'Foundations', d:skills.languages}, {n:'Intelligence', d:skills.frameworks}, {n:'Infrastructure', d:skills.tools} ].forEach(c => {
+                sGrid.innerHTML += `<div class="project-card"><h4>${c.n}</h4><p style="color:#888; margin-top:10px">${c.d.join(', ')}</p></div>`;
             });
         }
         window.onload = render;
